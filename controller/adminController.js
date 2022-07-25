@@ -163,7 +163,7 @@ module.exports = {
             if (!isValid) {
                 return res.status(400).json(errors)
             }
-            const { name, email, year, fatherName, aadharCard,
+            const { name, email, year, fatherName, governmentCard,
                 gender, department, section, dob, studentMobileNumber,
                 fatherMobileNumber } = req.body
 
@@ -223,7 +223,7 @@ module.exports = {
                 password: hashedPassword,
                 year,
                 fatherName,
-                aadharCard,
+                governmentCard,
                 gender,
                 registrationNumber,
                 department,
@@ -270,7 +270,7 @@ module.exports = {
                 return res.status(400).json(errors)
             }
             const { name, email, designation, department, facultyMobileNumber,
-                aadharCard, dob, gender } = req.body
+                governmentCard, dob, gender } = req.body
             const faculty = await Faculty.findOne({ email })
             if (faculty) {
                 errors.email = 'Email already exist'
@@ -333,7 +333,7 @@ module.exports = {
                 facultyMobileNumber,
                 gender,
                 avatar,
-                aadharCard,
+                governmentCard,
                 registrationNumber,
                 dob,
                 joiningYear
